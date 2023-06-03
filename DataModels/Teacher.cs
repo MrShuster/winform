@@ -6,28 +6,25 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.DataModels
 {
-    public class Lecturer : Person
+    public class Teacher : Person
     {
-        public string Subject { get; set; }
+        public string EmployeeId { get; set; }
+        public List<string> Courses { get; set; }
+        public string Specialization { get; set; }
+        public int StarRating { get; set; }
 
-        public Lecturer(int id, string name, int age, string subject) : base(id, name, age)
+        public Teacher(string id, string name, int age, string phoneNumber, string email, string imagePath, string employeeId, string specialization, int starRating) : base(id, name, age, phoneNumber, email, imagePath)
         {
-            Subject = subject;
+            EmployeeId = employeeId;
+            Specialization = specialization;
+            StarRating = starRating;
+            Courses = new List<string>();
         }
 
-        public void Teach()
+        public void AddCourse(string course)
         {
-            // Implement teach method
-        }
-
-        public void GradeExam()
-        {
-            // Implement grade exam method
-        }
-
-        public override string ToString()
-        {
-            return $"{Id} - {Name}, {Age}, {Subject}";
+            Courses.Add(course);
         }
     }
+
 }

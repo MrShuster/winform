@@ -46,9 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataModels\Lecturer.cs" />
+    <Compile Include="DataModels\Course.cs" />
+    <Compile Include="DataModels\DepartmentHead.cs" />
+    <Compile Include="DataModels\Teacher.cs" />
     <Compile Include="DataModels\Person.cs" />
     <Compile Include="DataModels\Student.cs" />
+    <Compile Include="DataModels\TeachingAssistant.cs" />
+    <Compile Include="DataModels\Track.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

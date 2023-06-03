@@ -8,29 +8,33 @@ namespace WindowsFormsApp1.DataModels
 {
     public abstract class Person
     {
-        public int Id { get; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string ImagePath { get; set; }
+        public List<string> Messages { get; set; }
 
-        public Person(int id, string name, int age)
+        public Person()
+        {
+            Messages = new List<string>();
+        }
+
+        public Person(string id, string name, int age, string phoneNumber, string email, string imagePath)
         {
             Id = id;
             Name = name;
             Age = age;
+            PhoneNumber = phoneNumber;
+            Email = email;
+            ImagePath = imagePath;
+            Messages = new List<string>();
         }
 
-        public override string ToString()
+        public void SendMessage(string message)
         {
-            return $"{Name}, {Age}";
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (obj == null || GetType() != obj.GetType())
-                return false;
-
-            Person other = (Person)obj;
-            return Id == other.Id;
+            Messages.Add(message);
         }
     }
-}
+

@@ -9,26 +9,21 @@ namespace WindowsFormsApp1.DataModels
 {
     public class Student : Person
     {
-        public string Major { get; set; }
+        public string StudentId { get; set; }
+        public string Course { get; set; }
+        public string Specialization { get; set; }
+        public int CurrentCreditPoints { get; set; }
+        public int TotalCreditPoints { get; set; }
 
-        public Student(int id, string name, int age, string major) : base(id, name, age)
+        public Student(string id, string name, int age, string phoneNumber, string email, string imagePath, string studentId, string course, string specialization, int currentCreditPoints, int totalCreditPoints) : base(id, name, age, phoneNumber, email, imagePath)
         {
-            Major = major;
-        }
-
-        public void Study()
-        {
-            // Implement study method
-        }
-
-        public void TakeExam()
-        {
-            // Implement take exam method
-        }
-
-        public override string ToString()
-        {
-            return $"{Id} - {Name}, {Age}, {Major}";
+            StudentId = studentId;
+            Course = course;
+            Specialization = specialization;
+            CurrentCreditPoints = currentCreditPoints;
+            TotalCreditPoints = totalCreditPoints;
         }
     }
+
+
 }
